@@ -15,12 +15,12 @@ const minusOnwElem = () => {
 };
   
 const decrementBtn = document.querySelector('[data-action="decrement"]');
-const increment = document.querySelector('[data-action="increment"]');
+const incrementBtn = document.querySelector('[data-action="increment"]');
 
 
 
 decrementBtn.addEventListener("click", minusOnwElem);
-increment.addEventListener("click", plusOnwElem);
+incrementBtn.addEventListener("click", plusOnwElem);
 
 console.log(counterValue);
 
