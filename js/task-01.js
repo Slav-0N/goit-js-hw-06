@@ -1,5 +1,6 @@
 let items = document.querySelectorAll(".item");
-console.log(`Кількість категорій в ul#categories, тобто елементів li.item :`,  items.length);
+console.log(`Number of categories:`,  items.length);
+console.log(``);
 
 let headerElementArray = document.querySelectorAll('.item');
 
@@ -8,7 +9,9 @@ let headerElementArray = document.querySelectorAll('.item');
 headerElementArray.forEach(element => {
   let titleEl = element.querySelector('h2') 
   let liQuantityEl = element.querySelectorAll('li');
-  console.log(`Категорія із заголовком`, titleEl.textContent, `містить ${liQuantityEl.length} вкладених елемента`);
+  console.log(`Category:`, titleEl.textContent);
+  console.log(`Elements: ${liQuantityEl.length}`);
+  console.log(``);
 });
 
 
