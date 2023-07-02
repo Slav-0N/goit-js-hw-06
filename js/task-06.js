@@ -1,13 +1,16 @@
 const validationInputEl = document.querySelector('#validation-input');
 
+const lengthDataElemv = validationInputEl.dataset.length;
+console.log(Number(lengthDataElemv));
 
 
 const changeValidColor = event => {
   // const validDataEl = validationInputEl.classList.add('valid');
   // const invalidDataEl = validationInputEl.classList.add('invalid');
-  const typedSymbolsEl = event.currentTarget.value;
-  console.log(typedSymbolsEl);
-  if (typedSymbolsEl.length !== 6) {
+  const typedSymbolsEl = event.currentTarget.value.trim();
+  console.log(typedSymbolsEl, typedSymbolsEl.length);
+
+  if (typedSymbolsEl.length !== Number(lengthDataElemv)) {
     const typedSymbolsEl = event.currentTarget.value;
     validationInputEl.classList.remove('valid');
     validationInputEl.classList.add('invalid');
