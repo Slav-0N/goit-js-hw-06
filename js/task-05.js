@@ -12,7 +12,10 @@ nameInputEl.addEventListener('input', greetingNameEl);
 
 
 function greetingNameEl (event) {
-  const realNameEl = event.currentTarget.value;
+  const realNameEl = event.currentTarget.value.trim();
+  // console.log(realNameEl.length);
+  // const withoutASpaces = realNameEl.trim();
+  // console.log(withoutASpaces.length)
 
   if (realNameEl === '') {
     nameInputText.textContent = 'Anonymous';  
@@ -23,6 +26,5 @@ function greetingNameEl (event) {
   };
   
  
-
 };
 
