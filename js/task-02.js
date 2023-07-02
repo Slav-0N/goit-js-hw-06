@@ -11,22 +11,34 @@ const ingredients = [
 const unoderedListElement = document.querySelector('ul');
 
 
-const newContainerElem = document.createElement('div');
-
-const addingListElements = ingredients.forEach(ingredient => {
+const addingListElements = ingredients.map(ingredient => {
   const listItemElem = document.createElement("li");
   listItemElem.classList.add('item');
   listItemElem.textContent = ingredient;
-
-  newContainerElem.append(listItemElem);
-  
-console.log(unoderedListElement);
+  return listItemElem;
 });
 
-const textedElements = newContainerElem.innerHTML;
-console.log(newContainerElem.innerHTML);
+console.log(addingListElements);
+console.log(...addingListElements);
+unoderedListElement.append(...addingListElements);
 
-unoderedListElement.insertAdjacentHTML('afterbegin', textedElements);
+
+
+
+// const addingListElements = ingredients.forEach(ingredient => {
+//   const listItemElem = document.createElement("li");
+//   listItemElem.classList.add('item');
+//   listItemElem.textContent = ingredient;
+
+//   newContainerElem.append(listItemElem);
+  
+// console.log(unoderedListElement);
+// });
+
+// const textedElements = newContainerElem.innerHTML;
+// console.log(newContainerElem.innerHTML);
+
+// unoderedListElement.insertAdjacentHTML('afterbegin', textedElements);
 
 
 
