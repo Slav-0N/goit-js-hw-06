@@ -12,37 +12,37 @@ const boxesEl = document.querySelector('#boxes');
 
 createBtnEl.addEventListener('click', createBoxes);
 function createBoxes(amount) {
+    // Не зрозумів щодо amount. Чому його треба винести в змінну? Бо в задачі сказано: "Створи функцію createBoxes(amount)"   Чи то, просто, є така можливість?...
+
   const inputNumber = inputEl.value;
   const newContainer = document.createElement('div');
+  const stepEl = Number(inputEl.getAttribute('step'));
+  const minEl = Number(inputEl.getAttribute('min'));
+  const maxEl = Number(inputEl.getAttribute('max'));
 
-  for (let i = 1; i <= inputNumber; i += 1) {
-    const newBox = document.createElement('div');
-    // newBox.setAttribute()
-    newBox.style.width=`${30+i*10}px`;
-    newBox.style.height=`${30+i*10}px`;
-    newBox.style.backgroundColor=getRandomHexColor();
-    newBox.style.marginBottom="20px";
-    newContainer.append(newBox);
-  }
-  console.log(newContainer);
-  const texnewBox = newContainer.innerHTML;
-  boxesEl.insertAdjacentHTML('afterbegin', texnewBox);
+  if (inputNumber < minEl || inputNumber >  maxEl) {
+    alert('Введіть число від 1 до 100 включно!');
+  } else {
+
+    for (let i = 1; i <= inputNumber; i += stepEl) {
+      const newBox = document.createElement('div');
+      newBox.style.width=`${30+i*10}px`;
+      newBox.style.height=`${30+i*10}px`;
+      newBox.style.backgroundColor=getRandomHexColor();
+      newBox.style.marginBottom="20px";
+      newContainer.append(newBox);
+    }
+    const texnewBox = newContainer.innerHTML;
+    boxesEl.insertAdjacentHTML('beforeend', texnewBox);
+    };
 };
 
 destroyBtnEl.addEventListener('click', destroyBoxes);
 function destroyBoxes(event) {
   boxesEl.innerHTML = '';
-  
- 
+  inputEl.value = '';
 };
 
-console.log(inputEl.attributes);
-console.log(inputEl.hasAttribute('type'));
-
-inputEl.addEventListener('focus', removeInputValue);
-function removeInputValue(event) {
-  event.currentTarget.value ='';
-}  
 
 
 
