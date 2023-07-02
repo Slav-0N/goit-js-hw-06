@@ -10,8 +10,8 @@ const changeFontSize = (event) => {
 };
 
 const setStartFontSize = () => {
-  const finalSize = minFontSize + (maxFontSize - minFontSize) / 2;
-  textEl.style.fontSize = `${finalSize}px`;
+  const silentlSize = minFontSize + (maxFontSize - minFontSize) / 2;
+  textEl.style.fontSize = `${silentlSize}px`;
 };
 
 setStartFontSize();

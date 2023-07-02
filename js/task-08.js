@@ -8,7 +8,7 @@ loginFormEl.addEventListener('submit', event => {
   const {elements: {email, password}} = event.currentTarget;
 
   if (email.value === '' || password.value === '') {
-    window.alert('Всі поля повинні бути заповнені') = alert();
+    alert('Всі поля повинні бути заповнені');
   };
 
   const userDataObjEl = {};
