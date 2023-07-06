@@ -13,7 +13,7 @@ const boxesEl = document.querySelector('#boxes');
 createBtnEl.addEventListener('click', createBoxes);
 function createBoxes(amount) {
     // Не зрозумів щодо amount. Чому його треба винести в змінну? Бо в задачі сказано: "Створи функцію createBoxes(amount)"   Чи то, просто, є така можливість?...
-
+  // console.log(amount);
   const inputNumber = inputEl.value;
   const newContainer = document.createElement('div');
   const stepEl = Number(inputEl.getAttribute('step'));

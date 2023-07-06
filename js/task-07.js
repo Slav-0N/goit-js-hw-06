@@ -19,5 +19,3 @@ setStartFontSize();
 
 
 fontSizeControlEl.addEventListener('input', changeFontSize);
-
-
